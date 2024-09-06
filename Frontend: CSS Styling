@@ -1,0 +1,58 @@
+# site.css
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #343a40;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.color-info {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.color-info h3 {
+  margin: 0;
+}
+
+.instructions {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.copy-button {
+  margin-top: 10px;
+}
+
+.copy-button button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.copy-button button:hover {
+  background-color: #0056b3;
+}
