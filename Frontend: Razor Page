@@ -1,4 +1,4 @@
-Index.cshtml
+#Index.cshtml
 @page
 @model ColorRecognizerWebApp.Pages.IndexModel
 @{
