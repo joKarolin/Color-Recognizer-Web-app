@@ -1,4 +1,4 @@
-# Index.cshtml
+Index.cshtml
 @page
 @model ColorRecognizerWebApp.Pages.IndexModel
 @{
@@ -19,7 +19,8 @@
         <hr />
         <h3>Uploaded Image:</h3>
         <div style="position: relative; display: inline-block;">
-            <img id="uploadedImage" src="@Url.Content(Model.ImagePath)" alt="Uploaded Image" style="max-width: 80%; height: auto;"/>
+            <!-- Error: Setting the image width too large -->
+            <img id="uploadedImage" src="@Url.Content(Model.ImagePath)" alt="Uploaded Image" style="width: 3000px; height: auto;"/>
             <div id="colorBox" style="width: 100px; height: 100px; position: absolute; top: 0; left: 0; border: 2px solid black;"></div>
         </div>
         <br /><br />
