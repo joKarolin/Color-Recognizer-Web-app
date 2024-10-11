@@ -1,18 +1,17 @@
-# Layout.cshtml
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewData["Title"] - Color Recognizer</title>
+    <title>@ViewData["Title"] - Hue Synthesizer</title>
     <link rel="stylesheet" href="~/css/site.css">
     @RenderSection("Styles", required: false)
 </head>
 <body>
+    <header>
+        <h1>Hue Synthesizer</h1>
+    </header>
     <div class="container">
-        <header>
-            <h1>Color Recognizer</h1>
-        </header>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
