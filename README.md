@@ -1,7 +1,7 @@
 # Color-Recognizer-Web-App
 
 ## Overview
-The **Color Recognizer** is a web application that allows users to pick an image from their system and select a specific color using a color picker tool. The application displays the RGB and Hexadecimal values of the selected color and saves the information along with a picture of the selected color.
+The **Hue Synthesizer** is a web application that allows users to pick an image from their system and select a specific color using a color picker tool. The application displays the RGB and Hexadecimal values of the selected color and saves the information along with a picture of the selected color.
 
 ## Features
 - Upload images and select colors from them.
