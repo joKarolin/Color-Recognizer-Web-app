@@ -1,4 +1,3 @@
-#Index.cshtml
 @page
 @model ColorRecognizerWebApp.Pages.IndexModel
 @{
@@ -6,7 +5,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Color Recognizer</h1>
+    <h1 class="display-4 font-updock">Color Recognizer: Instant color recognition interface</h1> <!-- Added class for Updock font -->
     <p>Select an image to analyze colors:</p>
     <form method="post" enctype="multipart/form-data">
         <input type="file" name="uploadedImage" />
@@ -19,8 +18,7 @@
         <hr />
         <h3>Uploaded Image:</h3>
         <div style="position: relative; display: inline-block;">
-            <!-- Error: Setting the image width too large -->
-            <img id="uploadedImage" src="@Url.Content(Model.ImagePath)" alt="Uploaded Image" style="width: 3000px; height: auto;"/>
+            <img id="uploadedImage" src="@Url.Content(Model.ImagePath)" alt="Uploaded Image" style="max-width: 80%; height: auto;" />
             <div id="colorBox" style="width: 100px; height: 100px; position: absolute; top: 0; left: 0; border: 2px solid black;"></div>
         </div>
         <br /><br />
@@ -30,7 +28,59 @@
         <div id="selectedColorBox" style="width: 100px; height: 100px; border: 2px solid black;"></div>
         <p id="colorCode">Hex: @Model.HexColor</p>
         <p id="rgbCode">RGB: @Model.RGBColor</p>
+
+        <!-- Copy buttons for both Hex and RGB -->
+        <div class="copy-button">
+            <button id="copyHexCodeBtn" class="btn btn-success">Copy Hex Code</button>
+            <button id="copyRGBCodeBtn" class="btn btn-info">Copy RGB Code</button>
+        </div>
     }
+
+    <!-- User Guide Section -->
+    <hr />
+    <h1>Color Recognition Tool User Guide</h1>
+    
+    <div class="guide">
+        <div class="step">
+            <h2>1. Load the Webpage</h2>
+            <p>Open the webpage hosting the color recognition tool.</p>
+        </div>
+
+        <div class="step">
+            <h2>2. Upload an Image</h2>
+            <p>Click the "Upload Image" button to select an image from your computer.</p>
+        </div>
+
+        <div class="step">
+            <h2>3. Display the Uploaded Image</h2>
+            <p>Your selected image will be displayed on the webpage.</p>
+        </div>
+
+        <div class="step">
+            <h2>4. Process the Image for Color Recognition</h2>
+            <p>Click the "Analyze Image" button to analyze the image and extract color information.</p>
+        </div>
+
+        <div class="step">
+            <h2>5. Enable the color picker</h2>
+            <p>Click on the "Pick color" button to enable the color picker tool. Now click on the image to select a color.</p>
+        </div>
+
+        <div class="step">
+            <h2>6. Display Color Information</h2>
+            <p>The RGB values and the color code of the selected pixel will be displayed below the image.</p>
+        </div>
+
+        <div class="step">
+            <h2>7. Optional Features</h2>
+            <p>You can use additional features like saving selected colors or resetting the tool to upload a new image.</p>
+        </div>
+
+        <div class="step">
+            <h2>8. Provide User Instructions</h2>
+            <p>Follow the instructions provided on the webpage to make the best use of the tool.</p>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
@@ -61,6 +111,36 @@
                 colorBox.style.left = `${x}px`;
                 colorBox.style.top = `${y}px`;
             });
+        });
+
+        // Function to copy the Hex code
+        document.getElementById('copyHexCodeBtn').addEventListener('click', function () {
+            const hexCode = document.getElementById('colorCode').textContent.replace('Hex: ', '');
+            const tempInput = document.createElement('input');
+            tempInput.style.position = 'absolute';
+            tempInput.style.left = '-9999px';
+            tempInput.value = hexCode;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            alert('Hex code copied: ' + hexCode);
+        });
+
+        // Function to copy the RGB code
+        document.getElementById('copyRGBCodeBtn').addEventListener('click', function () {
+            const rgbCode = document.getElementById('rgbCode').textContent.replace('RGB: ', '');
+            const tempInput = document.createElement('input');
+            tempInput.style.position = 'absolute';
+            tempInput.style.left = '-9999px';
+            tempInput.value = rgbCode;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            alert('RGB code copied: ' + rgbCode);
         });
 
         function rgbToHex(r, g, b) {
