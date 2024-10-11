@@ -1,10 +1,14 @@
-# site.css
+
+@import url('https://fonts.googleapis.com/css2?family=Updock&family=Tangerine&family=Playfair+Display:wght@400&display=swap');
+
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
+  font-family: 'Playfair Display', sans-serif; 
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
 }
+
 
 .container {
   width: 90%;
@@ -14,13 +18,26 @@ body {
 }
 
 header {
-  background-color: #343a40;
+  width: 100%;
+  background-color: #9b9ece;
   color: white;
-  padding: 10px 20px;
+  padding: 20px;
   text-align: center;
-  margin-bottom: 20px;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
 }
+
+
+.font-updock {
+  font-family: 'Updock', cursive; 
+}
+
+
+.color-info h3 {
+  font-family: 'Tangerine', cursive; 
+  margin: 0;
+}
+
 
 .color-info {
   margin-top: 20px;
@@ -30,9 +47,6 @@ header {
   background-color: #fff;
 }
 
-.color-info h3 {
-  margin: 0;
-}
 
 .instructions {
   margin-top: 30px;
@@ -40,19 +54,22 @@ header {
   color: #555;
 }
 
+
 .copy-button {
-  margin-top: 10px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .copy-button button {
-  background-color: #007bff;
+  background-color: #9b9ece;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .copy-button button:hover {
-  background-color: #0056b3;
+  background-color: #7a8fcf;
 }
